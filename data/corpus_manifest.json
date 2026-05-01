@@ -1,0 +1,296 @@
+{
+  "version": 1,
+  "description": "regrag corpus manifest. Each entry points to a publicly-accessible SEBI or RBI document. URLs captured 2026-05-01 from the regulators' canonical landing pages. Some URLs may move over time; run `python scripts/validate_manifest.py` to detect and report broken links. The download script is HTML-aware — if a URL serves HTML it will follow the first PDF link on the page, which makes the manifest robust to minor URL re-organisations.",
+  "documents": [
+    {
+      "doc_id": "SEBI-MC-MF-2024",
+      "title": "SEBI Master Circular for Mutual Funds",
+      "regulator": "SEBI",
+      "category": "mutual_funds",
+      "issue_date": "2024-06-27",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/jun-2024/master-circular-for-mutual-funds_84689.html",
+      "notes": "Consolidates circulars on mutual funds. ~300 pages."
+    },
+    {
+      "doc_id": "SEBI-MC-AIF-2024",
+      "title": "SEBI Master Circular for Alternative Investment Funds (AIFs)",
+      "regulator": "SEBI",
+      "category": "aif",
+      "issue_date": "2024-05-07",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2024/master-circular-for-alternative-investment-funds-aifs-_83260.html"
+    },
+    {
+      "doc_id": "SEBI-MC-LODR-2023",
+      "title": "SEBI Master Circular on Compliance with Listing Obligations and Disclosure Requirements (LODR) by NCS Issuers",
+      "regulator": "SEBI",
+      "category": "listing_obligations",
+      "issue_date": "2023-07-07",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/jul-2023/master-circular-for-compliance-with-the-provisions-of-the-securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-by-listed-entities_73450.html"
+    },
+    {
+      "doc_id": "SEBI-MC-PORTFOLIO-MGRS-2023",
+      "title": "SEBI Master Circular for Portfolio Managers",
+      "regulator": "SEBI",
+      "category": "portfolio_managers",
+      "issue_date": "2023-06-19",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/jun-2023/master-circular-for-portfolio-managers_72599.html"
+    },
+    {
+      "doc_id": "SEBI-MC-IA-2023",
+      "title": "SEBI Master Circular for Investment Advisers",
+      "regulator": "SEBI",
+      "category": "investment_advisers",
+      "issue_date": "2023-05-15",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2023/master-circular-for-investment-advisers_71156.html"
+    },
+    {
+      "doc_id": "SEBI-MC-RA-2023",
+      "title": "SEBI Master Circular for Research Analysts",
+      "regulator": "SEBI",
+      "category": "research_analysts",
+      "issue_date": "2023-05-15",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2023/master-circular-for-research-analysts_71157.html"
+    },
+    {
+      "doc_id": "SEBI-MC-DEPOSITORIES-2023",
+      "title": "SEBI Master Circular for Depositories",
+      "regulator": "SEBI",
+      "category": "depositories",
+      "issue_date": "2023-10-06",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/oct-2023/master-circular-for-depositories_77757.html"
+    },
+    {
+      "doc_id": "SEBI-MC-STOCK-BROKERS-2024",
+      "title": "SEBI Master Circular for Stock Brokers",
+      "regulator": "SEBI",
+      "category": "stock_brokers",
+      "issue_date": "2024-08-09",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/aug-2024/master-circular-for-stock-brokers_85801.html"
+    },
+    {
+      "doc_id": "SEBI-MC-FPI-2024",
+      "title": "SEBI Master Circular for Foreign Portfolio Investors, Designated Depository Participants and Eligible Foreign Investors",
+      "regulator": "SEBI",
+      "category": "fpi",
+      "issue_date": "2024-05-30",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2024/master-circular-for-foreign-portfolio-investors-designated-depository-participants-and-eligible-foreign-investors_83863.html"
+    },
+    {
+      "doc_id": "SEBI-MC-CUSTODIANS-2023",
+      "title": "SEBI Master Circular for Custodians",
+      "regulator": "SEBI",
+      "category": "custodians",
+      "issue_date": "2023-05-17",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2023/master-circular-for-custodians_71262.html"
+    },
+    {
+      "doc_id": "SEBI-MC-CRA-2024",
+      "title": "SEBI Master Circular for Credit Rating Agencies",
+      "regulator": "SEBI",
+      "category": "credit_rating_agencies",
+      "issue_date": "2024-05-16",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2024/master-circular-for-credit-rating-agencies_83466.html"
+    },
+    {
+      "doc_id": "SEBI-MC-DEBT-LISTING-2024",
+      "title": "SEBI Master Circular for Issue and Listing of Non-Convertible Securities, Securitised Debt Instruments, Security Receipts, Municipal Debt Securities and Commercial Paper",
+      "regulator": "SEBI",
+      "category": "debt_securities",
+      "issue_date": "2024-05-22",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2024/master-circular-for-issue-and-listing-of-non-convertible-securities-securitised-debt-instruments-security-receipts-municipal-debt-securities-and-commercial-paper_83641.html"
+    },
+    {
+      "doc_id": "SEBI-MC-DEBENTURE-TRUSTEES-2023",
+      "title": "SEBI Master Circular for Debenture Trustees",
+      "regulator": "SEBI",
+      "category": "debenture_trustees",
+      "issue_date": "2023-03-31",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/mar-2023/master-circular-for-debenture-trustees_70275.html"
+    },
+    {
+      "doc_id": "SEBI-MC-REIT-2024",
+      "title": "SEBI Master Circular for Real Estate Investment Trusts (REITs)",
+      "regulator": "SEBI",
+      "category": "reits",
+      "issue_date": "2024-05-15",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2024/master-circular-for-real-estate-investment-trusts-reits-_83410.html"
+    },
+    {
+      "doc_id": "SEBI-MC-INVIT-2024",
+      "title": "SEBI Master Circular for Infrastructure Investment Trusts (InvITs)",
+      "regulator": "SEBI",
+      "category": "invits",
+      "issue_date": "2024-05-15",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2024/master-circular-for-infrastructure-investment-trusts-invits-_83411.html"
+    },
+    {
+      "doc_id": "SEBI-MC-SE-CC-2023",
+      "title": "SEBI Master Circular for Stock Exchanges and Clearing Corporations",
+      "regulator": "SEBI",
+      "category": "infrastructure_intermediaries",
+      "issue_date": "2023-10-16",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/oct-2023/master-circular-for-stock-exchanges-and-clearing-corporations_78108.html"
+    },
+    {
+      "doc_id": "SEBI-MC-ICDR-2023",
+      "title": "SEBI Master Circular on Issue of Capital and Disclosure Requirements (ICDR)",
+      "regulator": "SEBI",
+      "category": "icdr",
+      "issue_date": "2023-07-12",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/jul-2023/master-circular-for-compliance-with-icdr-regulations_73564.html"
+    },
+    {
+      "doc_id": "SEBI-MC-PIT-2022",
+      "title": "SEBI (Prohibition of Insider Trading) Regulations — Operational Master Circular",
+      "regulator": "SEBI",
+      "category": "insider_trading",
+      "issue_date": "2022-08-05",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/aug-2022/master-circular-for-prohibition-of-insider-trading-regulations-2015_61828.html"
+    },
+    {
+      "doc_id": "SEBI-MC-BUYBACK-2023",
+      "title": "SEBI Master Circular for Buyback of Securities",
+      "regulator": "SEBI",
+      "category": "buyback",
+      "issue_date": "2023-04-19",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/apr-2023/master-circular-on-buyback-of-securities_70634.html"
+    },
+    {
+      "doc_id": "SEBI-MC-DELISTING-2024",
+      "title": "SEBI Master Circular for Delisting of Equity Shares",
+      "regulator": "SEBI",
+      "category": "delisting",
+      "issue_date": "2024-08-30",
+      "source_url": "https://www.sebi.gov.in/legal/master-circulars/aug-2024/master-circular-for-compliance-with-the-provisions-of-securities-and-exchange-board-of-india-delisting-of-equity-shares-regulations-2021_86191.html"
+    },
+    {
+      "doc_id": "RBI-MD-KYC-2016",
+      "title": "RBI Master Direction — Know Your Customer (KYC) Direction, 2016",
+      "regulator": "RBI",
+      "category": "kyc",
+      "issue_date": "2016-02-25",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566",
+      "notes": "Updated periodically. Frequently amended."
+    },
+    {
+      "doc_id": "RBI-MD-PPI-2021",
+      "title": "RBI Master Direction on Prepaid Payment Instruments (PPI)",
+      "regulator": "RBI",
+      "category": "payment_systems",
+      "issue_date": "2021-08-27",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12156"
+    },
+    {
+      "doc_id": "RBI-MD-DPSC-2021",
+      "title": "RBI Master Direction on Digital Payment Security Controls",
+      "regulator": "RBI",
+      "category": "payment_systems",
+      "issue_date": "2021-02-18",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12032"
+    },
+    {
+      "doc_id": "RBI-MD-CYBER-2016",
+      "title": "RBI Master Direction on Cyber Security Framework in Banks",
+      "regulator": "RBI",
+      "category": "cyber_security",
+      "issue_date": "2016-06-02",
+      "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=10435"
+    },
+    {
+      "doc_id": "RBI-MD-NBFC-SBR-2023",
+      "title": "RBI Master Direction — Reserve Bank of India (Non-Banking Financial Company — Scale Based Regulation) Directions, 2023",
+      "regulator": "RBI",
+      "category": "nbfc",
+      "issue_date": "2023-10-19",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12550"
+    },
+    {
+      "doc_id": "RBI-MD-NBFC-HFC-2021",
+      "title": "RBI Master Direction — Non-Banking Financial Company — Housing Finance Company Directions, 2021",
+      "regulator": "RBI",
+      "category": "nbfc_hfc",
+      "issue_date": "2021-02-17",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12030"
+    },
+    {
+      "doc_id": "RBI-MD-NBFC-MFI-2022",
+      "title": "RBI Master Direction — Reserve Bank of India (Regulatory Framework for Microfinance Loans) Directions, 2022",
+      "regulator": "RBI",
+      "category": "microfinance",
+      "issue_date": "2022-03-14",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12256"
+    },
+    {
+      "doc_id": "RBI-MD-CC-DC-2022",
+      "title": "RBI Master Direction — Credit Card and Debit Card — Issuance and Conduct Directions, 2022",
+      "regulator": "RBI",
+      "category": "cards",
+      "issue_date": "2022-04-21",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12300"
+    },
+    {
+      "doc_id": "RBI-MD-PSL-2020",
+      "title": "RBI Master Direction — Priority Sector Lending (PSL) — Targets and Classification",
+      "regulator": "RBI",
+      "category": "priority_sector",
+      "issue_date": "2020-09-04",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11959"
+    },
+    {
+      "doc_id": "RBI-MD-LRS-2016",
+      "title": "RBI Master Direction — Liberalised Remittance Scheme (LRS)",
+      "regulator": "RBI",
+      "category": "fema",
+      "issue_date": "2016-01-01",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10192"
+    },
+    {
+      "doc_id": "RBI-MD-ECB-2019",
+      "title": "RBI Master Direction — External Commercial Borrowings, Trade Credits and Structured Obligations",
+      "regulator": "RBI",
+      "category": "fema_ecb",
+      "issue_date": "2019-03-26",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11510"
+    },
+    {
+      "doc_id": "RBI-MD-MONEY-CHANGING-2016",
+      "title": "RBI Master Direction — Money Changing Activities",
+      "regulator": "RBI",
+      "category": "fema_money_changing",
+      "issue_date": "2016-01-01",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10198"
+    },
+    {
+      "doc_id": "RBI-MD-CUSTOMER-SERVICE-2023",
+      "title": "RBI Master Circular on Customer Service in Banks",
+      "regulator": "RBI",
+      "category": "customer_service",
+      "issue_date": "2023-04-03",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasCirculardetails.aspx?id=12492"
+    },
+    {
+      "doc_id": "RBI-MD-ARC-2003",
+      "title": "RBI Master Direction — Reserve Bank of India (Asset Reconstruction Companies) Directions",
+      "regulator": "RBI",
+      "category": "arc",
+      "issue_date": "2003-04-23",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11663"
+    },
+    {
+      "doc_id": "RBI-MD-CIC-2016",
+      "title": "RBI Master Direction — Core Investment Companies (CICs)",
+      "regulator": "RBI",
+      "category": "cic",
+      "issue_date": "2016-08-25",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10567"
+    },
+    {
+      "doc_id": "RBI-MD-IT-OUTSOURCING-2023",
+      "title": "RBI Master Direction on Outsourcing of Information Technology Services",
+      "regulator": "RBI",
+      "category": "it_outsourcing",
+      "issue_date": "2023-04-10",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12502"
+    }
+  ]
+}

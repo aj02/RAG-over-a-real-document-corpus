@@ -1,0 +1,326 @@
+{
+  "version": 1,
+  "description": "Hand-written eval set covering easy lookup, multi-doc synthesis, and out-of-corpus refusal cases. Each item declares: question, expected behaviour (answer | refuse), the doc_ids that should appear in retrieval (gold_doc_ids), and free-text reference notes for LLM-as-judge faithfulness scoring.",
+  "items": [
+    {
+      "id": "Q01",
+      "question": "What is the minimum net worth required for an Investment Adviser registered with SEBI?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-IA-2023"],
+      "reference_notes": "SEBI Investment Advisers Regulations + master circular set net worth requirements (e.g., individual: positive net worth; corporate: INR 50 lakh — confirm against current text).",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q02",
+      "question": "Under what circumstances must a Research Analyst register with SEBI as opposed to issuing reports without registration?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-RA-2023"],
+      "reference_notes": "SEBI Research Analyst Regulations cover thresholds for registration and exemptions for journalists, advisers etc.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q03",
+      "question": "What are the disclosure obligations for a Mutual Fund scheme regarding its expense ratio?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-MF-2024"],
+      "reference_notes": "Master circular for mutual funds covers TER disclosure on websites, AMFI portals, factsheets.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q04",
+      "question": "How does an FPI register with SEBI and what is the role of a Designated Depository Participant?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-FPI-2024"],
+      "reference_notes": "FPI master circular outlines DDP registration, KYC, application process.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q05",
+      "question": "What is the minimum corpus size for a Category I Alternative Investment Fund?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-AIF-2024"],
+      "reference_notes": "AIF Regulations require minimum corpus of INR 20 crore (general) — verify in current master circular text.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q06",
+      "question": "What are the timelines for a listed entity to disclose price-sensitive information under LODR?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-LODR-2023"],
+      "reference_notes": "Reg 30 of LODR + master circular: 24 hours / 12 hours / immediately depending on category.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q07",
+      "question": "How are unpublished price sensitive information (UPSI) and trading windows defined under SEBI insider trading rules?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-PIT-2022"],
+      "reference_notes": "PIT regulations Reg 2(n) (UPSI) + Reg 9 (Code of Conduct) + master circular.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q08",
+      "question": "What are the restrictions on intra-day buyback in the open market route?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-BUYBACK-2023"],
+      "reference_notes": "Buyback master circular has rules on max 25% of average daily volume, etc.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q09",
+      "question": "What customer due diligence (CDD) measures must banks apply for low-risk customers under RBI's KYC Master Direction?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-KYC-2016"],
+      "reference_notes": "RBI KYC MD differentiates simplified vs enhanced due diligence; low-risk gets reduced documentation.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q10",
+      "question": "What are the maximum loading limits for full-KYC PPIs as per RBI's Master Direction on PPIs?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-PPI-2021"],
+      "reference_notes": "PPI MD: full-KYC PPIs INR 2 lakh outstanding; small PPIs INR 10,000.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q11",
+      "question": "What multi-factor authentication requirements does RBI mandate for digital payment transactions?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-DPSC-2021"],
+      "reference_notes": "Digital Payment Security Controls MD requires AFA for transactions above thresholds.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q12",
+      "question": "What is the minimum capital requirement for a base-layer NBFC under the Scale-Based Regulation framework?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-NBFC-SBR-2023"],
+      "reference_notes": "SBR MD: minimum NOF generally INR 10 crore for NBFC-BL.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q13",
+      "question": "How does the RBI define a microfinance loan and what are the ceilings on household income for borrower eligibility?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-NBFC-MFI-2022"],
+      "reference_notes": "Microfinance regulatory framework (2022) sets income threshold INR 3 lakh per annum.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q14",
+      "question": "What disclosures must a credit-card issuer make to a customer at the time of issuance under the Credit and Debit Card MD?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-CC-DC-2022"],
+      "reference_notes": "Card MD: MITC, billing cycle, interest computation, fees, grievance redressal.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q15",
+      "question": "What is the priority sector lending target for foreign banks with 20 or more branches in India?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-PSL-2020"],
+      "reference_notes": "PSL MD: 40% of ANBC for foreign banks with >=20 branches.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q16",
+      "question": "Under the Liberalised Remittance Scheme, what is the per-financial-year limit and what categories of remittance are permitted?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-LRS-2016"],
+      "reference_notes": "LRS limit USD 250,000 per financial year for resident individuals; permitted categories enumerated.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q17",
+      "question": "What approvals are required to raise External Commercial Borrowings (ECB) and what is the all-in-cost ceiling for the automatic route?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-ECB-2019"],
+      "reference_notes": "ECB MD: automatic vs approval routes, AIC ceiling expressed as benchmark + spread.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q18",
+      "question": "How frequently must a SEBI-registered Portfolio Manager report performance to its clients?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-PORTFOLIO-MGRS-2023"],
+      "reference_notes": "PMS regulations: monthly reports.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q19",
+      "question": "What is the minimum subscription requirement for a public REIT issue?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-REIT-2024"],
+      "reference_notes": "REIT regulations have minimum subscription thresholds — note these have changed over time.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q20",
+      "question": "What is the minimum public unitholding required for a listed InvIT?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-INVIT-2024"],
+      "reference_notes": "InvIT regulations require minimum public unitholding (typically 25%).",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q21",
+      "question": "Compare the KYC requirements for opening a bank account with the KYC requirements for issuing a full-KYC PPI.",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-KYC-2016", "RBI-MD-PPI-2021"],
+      "reference_notes": "Synthesise across KYC MD and PPI MD.",
+      "tags": ["multi_doc", "synthesis"]
+    },
+    {
+      "id": "Q22",
+      "question": "How do the disclosure requirements for an Investment Adviser differ from those for a Research Analyst when issuing investment recommendations?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-IA-2023", "SEBI-MC-RA-2023"],
+      "reference_notes": "IA: fiduciary obligations; RA: distribution restrictions and disclosure of holdings.",
+      "tags": ["multi_doc", "synthesis"]
+    },
+    {
+      "id": "Q23",
+      "question": "If a Mutual Fund AMC also offers a Portfolio Management Service, what segregation requirements apply across the two activities?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-MF-2024", "SEBI-MC-PORTFOLIO-MGRS-2023"],
+      "reference_notes": "Cross-reference between MF and PMS master circulars on Chinese walls / segregation.",
+      "tags": ["multi_doc", "synthesis"]
+    },
+    {
+      "id": "Q24",
+      "question": "How are Foreign Portfolio Investors and Designated Depository Participants integrated into the depository system?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-FPI-2024", "SEBI-MC-DEPOSITORIES-2023"],
+      "reference_notes": "FPI uses DDP for KYC; DP regulations cover account opening for FPIs.",
+      "tags": ["multi_doc", "synthesis"]
+    },
+    {
+      "id": "Q25",
+      "question": "How do the obligations of a Stock Broker compare to those of a Custodian when handling client securities?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-STOCK-BROKERS-2024", "SEBI-MC-CUSTODIANS-2023"],
+      "reference_notes": "Both have segregation, reporting, and reconciliation obligations.",
+      "tags": ["multi_doc", "synthesis"]
+    },
+    {
+      "id": "Q26",
+      "question": "What is the difference between a NBFC-BL and a NBFC-ML under the Scale-Based Regulation?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-NBFC-SBR-2023"],
+      "reference_notes": "SBR layers: BL, ML, UL, TL — each has different regulatory expectations.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q27",
+      "question": "What outsourcing risk-management obligations apply to a bank that contracts a cloud provider for core IT services?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-IT-OUTSOURCING-2023", "RBI-MD-CYBER-2016"],
+      "reference_notes": "IT Outsourcing MD + Cyber Security Framework — DD, exit plans, audit rights.",
+      "tags": ["multi_doc", "synthesis"]
+    },
+    {
+      "id": "Q28",
+      "question": "What is the procedure for a listed company to delist its equity shares voluntarily?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-DELISTING-2024"],
+      "reference_notes": "Delisting Regulations 2021: reverse book building, exit price.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q29",
+      "question": "What is the role of a Debenture Trustee in a public issue of non-convertible debentures?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-DEBENTURE-TRUSTEES-2023", "SEBI-MC-DEBT-LISTING-2024"],
+      "reference_notes": "Debenture Trustee Regulations + NCS regulations on monitoring covenants and asset cover.",
+      "tags": ["multi_doc", "synthesis"]
+    },
+    {
+      "id": "Q30",
+      "question": "What credit rating disclosure obligations apply to a SEBI-registered Credit Rating Agency?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-CRA-2024"],
+      "reference_notes": "CRA Master Circular: rating actions, default disclosures, conflict-of-interest disclosures.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q31",
+      "question": "What are the eligibility criteria for an entity to act as an Asset Reconstruction Company in India?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-ARC-2003"],
+      "reference_notes": "ARC MD: minimum NOF (currently INR 300 crore), CRAR.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q32",
+      "question": "What is the SEBI process for approving a buyback of securities from the open market through stock exchange route?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-BUYBACK-2023"],
+      "reference_notes": "Buyback Regulations: time limits, escrow, disclosures.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q33",
+      "question": "How is the ICDR offer document structured for a fresh issue, and what are the role of the merchant banker's due diligence?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-ICDR-2023"],
+      "reference_notes": "ICDR regulations: DRHP, RHP, prospectus content, MB due diligence certificate.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q34",
+      "question": "What is the recommended exposure limit for a borrower under SEBI-regulated NBFCs?",
+      "expected": "refuse",
+      "gold_doc_ids": [],
+      "reference_notes": "Trick question — NBFCs are RBI-regulated, not SEBI-regulated. The system should refuse and clarify the regulatory mismatch rather than confabulate.",
+      "tags": ["refusal", "regulatory_mismatch"]
+    },
+    {
+      "id": "Q35",
+      "question": "What does the SEBI Master Circular on Mutual Funds say about cryptocurrency trading by AMCs?",
+      "expected": "refuse",
+      "gold_doc_ids": [],
+      "reference_notes": "Out of corpus / out of regulatory scope. The system should refuse and not invent rules.",
+      "tags": ["refusal", "out_of_corpus"]
+    },
+    {
+      "id": "Q36",
+      "question": "Should I invest my retirement savings in a Category III AIF?",
+      "expected": "refuse",
+      "gold_doc_ids": [],
+      "reference_notes": "Personal financial advice — system must refuse and direct to a licensed adviser.",
+      "tags": ["refusal", "legal_advice"]
+    },
+    {
+      "id": "Q37",
+      "question": "What is the GDP growth forecast for India in 2026?",
+      "expected": "refuse",
+      "gold_doc_ids": [],
+      "reference_notes": "Out of regulatory scope, not in any document. Refuse.",
+      "tags": ["refusal", "off_topic"]
+    },
+    {
+      "id": "Q38",
+      "question": "How does RBI's Liberalised Remittance Scheme interact with FEMA reporting on Form A2?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-LRS-2016"],
+      "reference_notes": "LRS MD references Form A2 for outward remittance reporting at AD banks.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q39",
+      "question": "What specific cyber-security incident reporting timelines does the RBI mandate for scheduled commercial banks?",
+      "expected": "answer",
+      "gold_doc_ids": ["RBI-MD-CYBER-2016"],
+      "reference_notes": "Cyber Security Framework: report unusual cyber incidents to RBI within prescribed timeframes.",
+      "tags": ["lookup", "single_doc"]
+    },
+    {
+      "id": "Q40",
+      "question": "What are the obligations of a SEBI-registered Custodian regarding daily client-asset reconciliation?",
+      "expected": "answer",
+      "gold_doc_ids": ["SEBI-MC-CUSTODIANS-2023"],
+      "reference_notes": "Custodian master circular sets reconciliation cadence and reporting.",
+      "tags": ["lookup", "single_doc"]
+    }
+  ]
+}
