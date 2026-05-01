@@ -18,6 +18,7 @@ from app.db import healthcheck
 from app.models.schemas import (
     AnswerResponse,
     AskRequest,
+    DocumentsResponse,
     HealthResponse,
     IngestRequest,
     IngestResponse,
@@ -26,6 +27,7 @@ from app.models.schemas import (
     SearchResponse,
 )
 from app.services.ask import answer_question
+from app.services.documents import list_documents
 from app.services.ingest import run_ingestion
 from app.services.search import search_only
 
@@ -63,6 +65,15 @@ async def ready() -> ReadyResponse:
 )
 async def ingest(req: IngestRequest) -> IngestResponse:
     return await run_ingestion(doc_ids=req.doc_ids, force=req.force)
+
+
+# ---------- documents ----------
+
+
+@router.get("/documents", response_model=DocumentsResponse, tags=["documents"])
+async def documents() -> DocumentsResponse:
+    """List every ingested document with a short preview paragraph."""
+    return await list_documents()
 
 
 # ---------- retrieval ----------

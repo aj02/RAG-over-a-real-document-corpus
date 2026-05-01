@@ -66,6 +66,26 @@ export const HealthResponseSchema = z.object({
 });
 export type HealthResponse = z.infer<typeof HealthResponseSchema>;
 
+export const DocumentSummarySchema = z.object({
+  doc_id: z.string(),
+  title: z.string(),
+  regulator: RegulatorSchema,
+  category: z.string().nullable().optional(),
+  issue_date: z.string().nullable().optional(),
+  source_url: z.string(),
+  num_pages: z.number().int().nullable().optional(),
+  chunk_count: z.number().int(),
+  ingested_at: z.string().nullable().optional(),
+  preview: z.string(),
+});
+export type DocumentSummary = z.infer<typeof DocumentSummarySchema>;
+
+export const DocumentsResponseSchema = z.object({
+  documents: z.array(DocumentSummarySchema),
+  total: z.number().int(),
+});
+export type DocumentsResponse = z.infer<typeof DocumentsResponseSchema>;
+
 export const ApiErrorSchema = z.object({
   error: z.object({
     code: z.number().int(),

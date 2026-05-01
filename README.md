@@ -19,10 +19,12 @@ pgvector, the API on `:8000`, and the web UI on `:3000`.
 | --- | --- |
 | ![Ask page — empty state with example questions](docs/screenshots/ask-empty.png) | ![Ask page — refusal on empty corpus](docs/screenshots/ask-refusal.png) |
 | **`/`** — empty state with the example-question grid | **`/`** — refusal flow before any corpus is ingested: low-confidence pill, `no_relevant_context` warning, `(none — refused before LLM call)`, 285 ms latency |
-| ![Search debug view](docs/screenshots/search.png) | ![About page — corpus + eval table](docs/screenshots/about.png) |
-| **`/search`** — retrieval debug view (BM25 + vector → RRF → rerank) | **`/about`** — architecture, corpus stats (36 / 20 / 16), eval table |
+| ![Search debug view](docs/screenshots/search.png) | ![Document catalogue page](docs/screenshots/documents.png) |
+| **`/search`** — retrieval debug view (BM25 + vector → RRF → rerank) | **`/documents`** — full corpus catalogue, 36 cards with regulator pill / preview / page count / source link |
+| ![About page — corpus + eval table](docs/screenshots/about.png) | |
+| **`/about`** — architecture, corpus stats (36 / 20 / 16), eval table |  |
 
-> All four images are captured from the live `docker compose up` stack
+> All five images are captured from the live `docker compose up` stack
 > against the production web container. After you ingest the corpus, rerun
 > [`scripts/capture_screenshots.mjs`](scripts/capture_screenshots.mjs)
 > (instructions in [docs/screenshots.md](docs/screenshots.md)) to swap the
@@ -171,11 +173,12 @@ eval/
 └── results/                 # markdown + JSON reports
 scripts/
 ├── init_db.sql              # postgres+pgvector schema
-├── download_corpus.py       # HTML-aware PDF downloader
+├── download_corpus.py       # HTML-aware PDF downloader (httpx-based)
+├── download_via_browser.mjs # Playwright fallback for JS-challenged sites
 └── ingest_cli.py            # ingestion outside the API
 tests/                       # pytest unit + smoke tests
 web/                         # Next.js 15 + Tailwind v4 frontend
-├── app/                     # /ask /search /about routes
+├── app/                     # /ask /search /documents /about routes
 ├── components/              # ask-form, answer-card, citation-card, …
 ├── lib/                     # api client + Zod schemas
 └── Dockerfile               # multi-stage standalone build
@@ -222,6 +225,22 @@ python scripts/download_corpus.py --validate # HEAD-only sanity check
 The downloader follows HTML landing pages and picks up the first PDF link
 (SEBI and RBI both serve PDFs through HTML index pages), so the manifest
 stays robust to URL changes.
+
+> **Heads-up — bot challenges.** Both regulators front their public document
+> index pages with a JavaScript bot challenge that returns the same
+> anti-automation HTML to a plain `httpx`/`curl` request, regardless of the
+> User-Agent. The httpx downloader detects these challenge pages and refuses
+> to save them as PDFs. For sites that block the simple downloader, run the
+> Playwright-based fallback instead — it executes the JS challenge in a real
+> headless Chromium:
+>
+> ```bash
+> cd web && pnpm install && npx playwright install chromium
+> node ../scripts/download_via_browser.mjs    # downloads all 36 manifest entries
+> ```
+>
+> On the manifest committed to this repo, the browser-based downloader
+> resolves all 36 entries (~23 MB total) cleanly.
 
 ### 3. Ingest
 
@@ -449,6 +468,7 @@ Every knob is in [`.env.example`](.env.example) and surfaced via
 | `GET` | `/health` | — | liveness, never touches deps |
 | `GET` | `/ready` | — | DB + embedder readiness |
 | `POST` | `/ingest` | bearer | run the ingestion pipeline |
+| `GET` | `/documents` | — | catalogue of every ingested doc + a short preview |
 | `GET` | `/search?q=...&top_k=10` | — | retrieval only, no LLM |
 | `POST` | `/ask` | — | full RAG with citations |
 

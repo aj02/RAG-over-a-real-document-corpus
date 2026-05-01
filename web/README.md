@@ -16,11 +16,12 @@ The frontend assumes the FastAPI backend is reachable at
 
 ## Pages
 
-| route     | what it does                                                                |
-| --------- | --------------------------------------------------------------------------- |
-| `/`       | Main Q&A — full RAG pipeline (retrieve → rerank → generate → cite)          |
-| `/search` | Retrieval debug view — runs hybrid + rerank but skips the LLM               |
-| `/about`  | Project overview, architecture diagram, corpus stats, eval results          |
+| route        | what it does                                                                |
+| ------------ | --------------------------------------------------------------------------- |
+| `/`          | Main Q&A — full RAG pipeline (retrieve → rerank → generate → cite)          |
+| `/search`    | Retrieval debug view — runs hybrid + rerank but skips the LLM               |
+| `/documents` | Catalogue of every ingested PDF with a short preview, regulator / search filters |
+| `/about`     | Project overview, architecture diagram, corpus stats, eval results          |
 
 ## Design choices
 

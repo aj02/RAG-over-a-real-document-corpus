@@ -35,9 +35,11 @@ data/pdfs/
 data/cache/
 data/extracted/
 
-# Model caches (sentence-transformers downloads)
+# Model caches (sentence-transformers downloads). Anchor with a leading
+# slash so this rule matches only a top-level `models/` directory and does
+# NOT swallow `app/models/` (the Pydantic schema package).
 .cache/
-models/
+/models/
 
 # Logs
 logs/

@@ -10,9 +10,11 @@ import { z } from "zod";
 import {
   AnswerResponseSchema,
   ApiErrorSchema,
+  DocumentsResponseSchema,
   HealthResponseSchema,
   SearchResponseSchema,
   type AnswerResponse,
+  type DocumentsResponse,
   type HealthResponse,
   type Regulator,
   type SearchResponse,
@@ -144,4 +146,13 @@ export function search(
 
 export function health(signal?: AbortSignal): Promise<HealthResponse> {
   return request("/health", { method: "GET" }, HealthResponseSchema, signal);
+}
+
+export function listDocuments(signal?: AbortSignal): Promise<DocumentsResponse> {
+  return request(
+    "/documents",
+    { method: "GET" },
+    DocumentsResponseSchema,
+    signal,
+  );
 }

@@ -3,7 +3,14 @@
  */
 
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { ask, health, search, type AskInput, type SearchInput } from "@/lib/api";
+import {
+  ask,
+  health,
+  listDocuments,
+  search,
+  type AskInput,
+  type SearchInput,
+} from "@/lib/api";
 
 export function useAsk() {
   return useMutation({
@@ -25,5 +32,15 @@ export function useHealth() {
     queryFn: ({ signal }) => health(signal),
     staleTime: 30 * 1000,
     retry: 0,
+  });
+}
+
+export function useDocuments() {
+  return useQuery({
+    queryKey: ["documents"],
+    queryFn: ({ signal }) => listDocuments(signal),
+    // The corpus only changes when /ingest runs, so we can cache aggressively.
+    staleTime: 5 * 60 * 1000,
+    retry: 1,
   });
 }
