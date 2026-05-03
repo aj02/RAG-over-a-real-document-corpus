@@ -5,7 +5,7 @@ import { loadCorpusStats, loadLatestEvalRun } from "@/lib/corpus-stats";
 
 export const dynamic = "force-static";
 
-const REPO_URL = "https://github.com/your-handle/regrag";
+const REPO_URL = "https://github.com/aj02/sebi-rbi-rag";
 const LINKEDIN_URL = "https://www.linkedin.com/in/your-handle/";
 
 const ARCH_DIAGRAM = `┌────────────┐    ┌──────────────┐

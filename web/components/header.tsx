@@ -15,7 +15,7 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
 ] as const;
 
-const REPO_URL = "https://github.com/your-handle/regrag";
+const REPO_URL = "https://github.com/aj02/sebi-rbi-rag";
 
 export function Header() {
   const pathname = usePathname();
