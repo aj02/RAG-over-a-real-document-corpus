@@ -19,4 +19,8 @@ def get_llm_client() -> LLMClient:
         from app.llm.openai_client import OpenAIClient
 
         return OpenAIClient()
+    if settings.llm_provider == "deepinfra":
+        from app.llm.deepinfra_client import DeepInfraClient
+
+        return DeepInfraClient()
     raise RuntimeError(f"unknown LLM_PROVIDER: {settings.llm_provider}")

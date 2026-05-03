@@ -47,11 +47,17 @@ class Settings(BaseSettings):
     cohere_api_key: str | None = None
 
     # ---- LLM ----
-    llm_provider: Literal["anthropic", "openai"] = "anthropic"
+    llm_provider: Literal["anthropic", "openai", "deepinfra"] = "anthropic"
     anthropic_api_key: str | None = None
     anthropic_model: str = "claude-sonnet-4-6"
     openai_api_key: str | None = None
     openai_model: str = "gpt-4o-mini"
+    # DeepInfra exposes an OpenAI-compatible endpoint, so we reuse the
+    # OpenAI SDK with a custom base URL. Default model is DeepSeek-V3 which
+    # supports response_format=json_object.
+    deepinfra_api_key: str | None = None
+    deepinfra_model: str = "deepseek-ai/DeepSeek-V3"
+    deepinfra_base_url: str = "https://api.deepinfra.com/v1/openai"
     llm_max_tokens: int = 1024
     llm_temperature: float = 0.0
     llm_timeout_seconds: float = 60.0

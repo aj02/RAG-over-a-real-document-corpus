@@ -6,8 +6,11 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-regrag}
       POSTGRES_USER: ${POSTGRES_USER:-regrag}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-regrag_dev_password}
+    # Host port 5432 is often taken by another local Postgres instance, so
+    # we publish on 5433. Inside the Docker network the api still talks to
+    # this container on its container port 5432 via the service name.
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/01_init.sql:ro

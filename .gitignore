@@ -27,6 +27,7 @@ env/
 .vscode/
 .idea/
 .claude/
+.history/
 *.swp
 *.swo
 

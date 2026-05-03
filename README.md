@@ -449,9 +449,11 @@ Every knob is in [`.env.example`](.env.example) and surfaced via
 
 | var | default | what it does |
 | --- | --- | --- |
-| `LLM_PROVIDER` | `anthropic` | `anthropic` or `openai` |
+| `LLM_PROVIDER` | `anthropic` | `anthropic`, `openai`, or `deepinfra` |
 | `ANTHROPIC_MODEL` | `claude-sonnet-4-6` | strong default; downgrade to haiku for cost |
 | `OPENAI_MODEL` | `gpt-4o-mini` | |
+| `DEEPINFRA_MODEL` | `deepseek-ai/DeepSeek-V3` | full HF repo path; any DeepInfra-hosted chat model works |
+| `DEEPINFRA_BASE_URL` | `https://api.deepinfra.com/v1/openai` | OpenAI-compatible endpoint |
 | `RERANKER_PROVIDER` | `local` | `local` (bge-reranker-base, CPU) or `cohere` |
 | `BM25_TOP_K` / `VECTOR_TOP_K` | 50 / 50 | how wide each retriever fans out |
 | `RRF_K` | 60 | RRF damping constant |
