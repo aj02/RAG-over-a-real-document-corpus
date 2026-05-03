@@ -15,6 +15,20 @@ pgvector, the API on `:8000`, and the web UI on `:3000`.
 
 ## Screenshots
 
+### `/` — full RAG flow over the ingested corpus
+
+![Ask page — full answer with inline citations and source cards](docs/screenshots/ask-answer.png)
+
+End-to-end response on the live stack: the question goes through hybrid
+retrieval (BM25 + vector) → RRF fusion → cross-encoder rerank →
+DeepSeek-V3 on DeepInfra. Every claim in the answer body has an inline
+citation token like `[doc_id=RBI-MD-KYC-2016, pages=20-21]`, the
+"context may be outdated" warning is preserved (no master-circular
+amendment graph yet), and the citation cards below show the supporting
+passages with a `source` link to the RBI master direction PDF.
+
+### Other states and pages
+
 | | |
 | --- | --- |
 | ![Ask page — empty state with example questions](docs/screenshots/ask-empty.png) | ![Ask page — refusal on empty corpus](docs/screenshots/ask-refusal.png) |
@@ -24,7 +38,7 @@ pgvector, the API on `:8000`, and the web UI on `:3000`.
 | ![About page — corpus + eval table](docs/screenshots/about.png) | |
 | **`/about`** — architecture, corpus stats (36 / 20 / 16), eval table |  |
 
-> All five images are captured from the live `docker compose up` stack
+> All six images are captured from the live `docker compose up` stack
 > against the production web container. After you ingest the corpus, rerun
 > [`scripts/capture_screenshots.mjs`](scripts/capture_screenshots.mjs)
 > (instructions in [docs/screenshots.md](docs/screenshots.md)) to swap the
